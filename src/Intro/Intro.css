@@ -1,0 +1,33 @@
+#Intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    grid-auto-rows: minmax(210px, auto);
+}
+
+#Intro > img {
+    width: 50%;
+}
+
+#Intro > div {
+    text-align: center;
+}
+
+.intro-text {
+    position: relative;
+}
+
+:root {
+    --name-circle-width: 100px;
+    --name-circle-height: 100px;
+}
+
+.name-circle {
+    position: absolute;
+    background-color: #131313;
+    width: var(--name-circle-width);
+    height: var(--name-circle-height);
+    top: calc(50% - var(--name-circle-height) / 2);
+    left: calc(50% - var(--name-circle-width) / 2);
+    z-index: -1;
+}

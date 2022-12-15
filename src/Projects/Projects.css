@@ -1,0 +1,31 @@
+#project-intro {
+    display: grid;
+    place-items: center;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    place-items: center;
+    grid-auto-rows: 1fr 1fr;
+}
+
+.l, .r {
+    display: grid;
+    place-items: center;
+    padding: 2%;
+    text-align: center;
+}
+
+#project-intro > h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.project-intro-letter {
+    display: inline-block;
+    margin-left: 1%;
+}
+.l > img, .r > img {
+    width: 80%;
+}

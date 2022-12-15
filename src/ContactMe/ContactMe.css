@@ -1,0 +1,23 @@
+#ContactMe{
+    display: grid;
+    grid-template-rows: 15% auto;
+    place-items: center;
+}
+
+.socials {
+    width: max(200px, 50%);
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+    grid-gap: 10%;
+}
+li > a > img {
+    width: 200px;
+}
+
+@media screen and (max-width: 888px) {
+    li > a > img {
+        width: 100px;
+    }
+}
