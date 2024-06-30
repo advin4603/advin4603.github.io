@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.text-section {
+  font-family: "Arsenal", sans-serif;
+  background-color: black;
+  color: white;
+  font-size: larger;
+}
+
+@keyframes entry-top-left {
+  0% {
+    scale: 0;
+    transform-origin: left;
+    }
+  100% {
+    scale: 1;
+    transform-origin: default;
+  }
+}
+
+.aboutMe {
+  animation-duration: .2s;
+  animation-name: entry-top-left;
+  animation-fill-mode: backwards;
+  /* animation-iteration-count: infinite; */
+  animation-timing-function: cubic-bezier(.13,.83,.85,1.11);
+}
+
+.blackOutline {
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -4;
+    scale: 1.05;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+.sideDialogue{
+  position:absolute;
+  top: 0%;
+  left: -22%;
+  overflow: visible;
+}
+
+.whiteSideDialogue {
+  z-index: -4;
+}
+
+@keyframes whiteSideDialogueJiggle {
+  0% {
+    d: path("M52 30L55.5 0L100 26L135.5 103L80.5 58.5L65 71.5L0 20L52 30Z");
+  }
+  33.33% {
+    d: path("M52 30L65 12L100 26L135.5 103L75.5 50.5L66.5 74L0 26L52 30Z");
+  }
+  66.66% {
+    d: path("M52 30L59 2.5L100 26L135.5 103L85.5 58L52 76L3 12L52 30Z");
+  }
+  100% {
+    d: path("M52 30L55.5 0L100 26L135.5 103L80.5 58.5L65 71.5L0 20L52 30Z");
+  }
+}
+
+@keyframes blackSideDialogueJiggle {
+  0% {
+    d: path("M53.5 40.5L62 16L105.5 35L130.5 87L80.5 43L63.5 60L24 30.5L53.5 40.5Z");
+  }
+  33.33% {
+    d: path("M53 39L66.5 22.5L105.5 35L130.5 87L73 43.5L63.5 63.5L22 35L53 39Z");
+  }
+  66.66% {
+    d: path("M57 40L62 16L105.5 35L130.5 87L85.5 49L54 63.5L15.5 21L57 40Z" );
+  }
+  100% {
+    d: path("M53.5 40.5L62 16L105.5 35L130.5 87L80.5 43L63.5 60L24 30.5L53.5 40.5Z");
+  }
+}
+
+@keyframes dialogueTopJiggle {
+  0% {
+    d: path("M78 82.5L59 62.5L278.5 0L315 48L112.5 89.5L121 108.5L0 119L78 82.5Z");
+  }
+  50% {
+    d: path("M78.5 78.5L49.5 64.5L268 0L315 41.5L110 89.5L121 108.5L0 119L78.5 78.5Z");
+  }
+  100% {
+    d: path("M78 82.5L59 62.5L278.5 0L315 48L112.5 89.5L121 108.5L0 119L78 82.5Z");
+  }
+}
+
+.dialogueTop path {
+  animation: dialogueTopJiggle 0.5s Infinite;  
+}
+
+.whiteSideDialogue path {
+  animation: whiteSideDialogueJiggle 0.75s Infinite;
+}
+
+.blackSideDialogue path {
+  animation: blackSideDialogueJiggle 0.75s Infinite;
+}
+
+.blackSideDialogue {
+  z-index: -2;
+}
+
+.blackOutline::before {
+    content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -4;
+  top: 0;
+  left: 0;
+  background: inherit;
+  transform: skew(0, -2.2deg);
+  transform-origin: top left;
+  border-radius: 5px;
+}
+
+.blackOutline::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -4;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transform: skew(0, -3deg);
+    transform-origin: bottom right;
+    border-radius: 5px;
+  }
+
+.whiteOutline {
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -3;
+    scale: 1.03;
+    background-color: white;
+}
+
+.whiteOutline::before {
+    content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -3;
+  top: 0;
+  left: 0;
+  background: inherit;
+  transform: skew(0, -2.2deg);
+  transform-origin: top left;
+}
+
+.whiteOutline::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transform: skew(0, -3deg);
+    transform-origin: bottom right;
+  }
+
+
+.text-section-container {
+  font-size: 2em;
+}
+
+.text-section-container::before {
+    content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: inherit;
+  transform: skew(0, -2deg);
+  transform-origin: top left;
+}
+
+.text-section-container::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transform: skew(0, -2deg);
+    transform-origin: bottom right;
+  }
