@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .text-section {
   font-family: "Arsenal", sans-serif;
   background-color: black;
   color: white;
-  font-size: larger;
+  font-size: min(5vw, 5vh);
 }
 
 @keyframes entry-top-left {

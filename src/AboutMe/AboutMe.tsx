@@ -25,9 +25,9 @@ function AboutMe() {
             fill="black"
             xmlSpace="preserve"
             style={{ whiteSpace: "pre", fontWeight: "bold" }}
-            font-family="Arsenal"
-            font-size="200%"
-            letter-spacing="0em"
+            fontFamily="Arsenal"
+            fontSize="200%"
+            letterSpacing="0em"
           >
             <tspan
               x="20%"

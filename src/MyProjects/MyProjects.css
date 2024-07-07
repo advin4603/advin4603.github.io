@@ -1,15 +1,150 @@
-.introGif {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+.myProjects {
+    display: grid;
+    grid-template-rows: 10% calc(100% - 10%);
+    height: 100%;
 }
 
-.introGif > img {
+
+.myProjects > header {
+    margin-left: 10%;
+    font-size: 3.5vh;
+    font-family: "Arsenal", sans-serif;
+    font-weight: bolder;
+    background-color: white;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+    padding: 2px 15px;
+    transform: skewX(-15deg) rotate(0.2deg);
+    border: solid black 5px;
+}
+
+.projectCardWrapper {
+    transform: skew(3deg);
+}
+
+.projectCard {
+    font-family: "Arsenal", sans-serif;
+    margin-top: 3%;
+    margin-left: 10%;
+    list-style-type: none;
+    color: white;
+    background-color: black;
+    margin-right: 10%;
+    padding: 3%;
+    border: solid white 10px;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+    "heading  image image"
+    "description image image";
+    gap: 2em;
+    
+}
+
+
+@media only screen and (max-width: 1048px)  {
+    .projectCard {
+        grid-template-areas: 
+    "heading"
+    "image"
+    "description";
+    padding: 3%;
+
+    }   
+}
+
+.projectCardWrapper:hover {
+    animation: shake 0.82s linear;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+.projectCardWrapper:hover > .projectCard > * {
+    animation: reverse-shake 0.82s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes reverse-shake {
+    10%, 90% {
+        translate: 4px 0;
+    }
+    
+    20%, 80% {
+      
+        translate: -4px 0;
+    }
+  
+    30%, 50%, 70% {
+      
+        translate: 4px 0;
+    }
+  
+    40%, 60% {
+        translate: -4px 0;
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        translate: -4px 0;
+    }
+    
+    20%, 80% {
+      
+        translate: 4px 0;
+    }
+  
+    30%, 50%, 70% {
+      
+        translate: -4px 0;
+    }
+  
+    40%, 60% {
+        translate: 4px 0;
+    }
+  }
+
+.projectCard > * {
+    transform: skew(-3deg);
+}
+.projectCard > h1 {
+    grid-area: heading;
+}
+
+.projectCard > img {
+    grid-area: image;
     width: 100%;
-    object-fit: cover;
+}
+
+.projectCard > p {
+    grid-area: description;
+}
+
+.projectCard > h1, img {
+    margin-bottom: 3%;    
+}
+
+.projectCard > h1 {
+font-size: 2.5rem;
+}
+
+.projectCard > p {
+    font-size: 1.5rem;
+}
+
+.projectCard:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -17px;
+    bottom: -17px;
+    left: -17px;
+    right: -17px;
+    z-index: -1;
+    border-radius: 5px;
+    border: 10px solid black;
 }

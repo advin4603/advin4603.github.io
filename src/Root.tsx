@@ -1,30 +1,59 @@
 import "./Root.css";
 import { MenuItem } from "./MenuItem";
 import { Outlet, Link } from "react-router-dom";
+import bnnuy from "./assets/bnnuy.webp";
+import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
 
 function Root() {
+  const splitMenu = useMediaQuery({ query: "(max-width: 1440px)" });
+  const [menuExpanded, setMenuExpanded] = useState(false);
+
+  const splitMenuStyle = {
+    "--menu-size": "100%",
+    "--main-section-size": "100%",
+    "--shift": menuExpanded ? "0" : "-100%",
+    "--menu-open": "1",
+  } as React.CSSProperties;
+
   return (
-    <main className="canvas">
+    <main className="canvas" style={splitMenu ? splitMenuStyle : undefined}>
       <section className="menu">
         <div className="menuImage">
-          <img src="./src/assets/bnnuy.webp" alt="" />
+          <img src={bnnuy} alt="" />
         </div>
         <ul>
           <MenuItem>
-            <Link to={"aboutme"}>About Me</Link>
+            <Link to={"aboutme"} onClick={() => setMenuExpanded(false)}>
+              About Me
+            </Link>
           </MenuItem>
 
           <MenuItem>
-            <Link to={"projects"}>My Projects</Link>
+            <Link to={"projects"} onClick={() => setMenuExpanded(false)}>
+              My Projects
+            </Link>
           </MenuItem>
           <MenuItem>Work Experience</MenuItem>
+          <MenuItem>
+            <Link to={"contactMe"} onClick={() => setMenuExpanded(false)}>
+              Contact Me
+            </Link>
+          </MenuItem>
         </ul>
-        <div className="menuBottom">
-          <img src="./src/assets/bnnuy.webp" alt="" />
-        </div>
       </section>
-      <section className="mainSection">
-        <Outlet />
+      <section
+        className="mainSection"
+        style={{ overflowX: splitMenu ? "visible" : "hidden" }}
+      >
+        {splitMenu ? (
+          <button className="menuButton" onClick={() => setMenuExpanded(true)}>
+            Menu
+          </button>
+        ) : null}
+        <div className="mainSectionOutlet">
+          <Outlet />
+        </div>
       </section>
     </main>
   );
