@@ -14,7 +14,8 @@ export function Transition({
   timeoutDelay?: number;
   gifLength?: number;
 }>) {
-  const [transitioned, setTransitioned] = useState(false);
+  const [showMain, setShowMain] = useState(false);
+  const [transitioned, setTransitioned] = useState(true);
   const [rand, setRand] = useState<number | null>(null);
   const [showChildren, setShowChildren] = useState(false);
   const [timeOutInt, setTimeOutInt] = useState<number | null>(null);
@@ -25,6 +26,7 @@ export function Transition({
     setRand(Math.random());
     const int = setTimeout(() => {
       setTransitioned(true);
+      setShowMain(true);
     }, timeoutDelay);
     setTimeOutInt(int);
     return () => {
@@ -45,6 +47,7 @@ export function Transition({
               setTimeOutInt(
                 setTimeout(() => {
                   setTransitioned(true);
+                  setShowMain(true);
                 }, gifLength)
               );
             }
@@ -54,7 +57,7 @@ export function Transition({
       </div>
       {showChildren ? children : null}
     </>
-  ) : (
+  ) : showMain ? (
     children
-  );
+  ) : null;
 }

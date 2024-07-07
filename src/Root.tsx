@@ -5,7 +5,7 @@ import bnnuy from "./assets/bnnuy.webp";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 
-function Root() {
+function Root({ children }: React.PropsWithChildren) {
   const splitMenu = useMediaQuery({ query: "(max-width: 1440px)" });
   const [menuExpanded, setMenuExpanded] = useState(false);
 
@@ -34,7 +34,11 @@ function Root() {
               My Projects
             </Link>
           </MenuItem>
-          <MenuItem>Work Experience</MenuItem>
+          <MenuItem>
+            <Link to={"workExperience"} onClick={() => setMenuExpanded(false)}>
+              Work Experience
+            </Link>
+          </MenuItem>
           <MenuItem>
             <Link to={"contactMe"} onClick={() => setMenuExpanded(false)}>
               Contact Me
@@ -51,9 +55,7 @@ function Root() {
             Menu
           </button>
         ) : null}
-        <div className="mainSectionOutlet">
-          <Outlet />
-        </div>
+        <div className="mainSectionOutlet">{children ?? <Outlet />}</div>
       </section>
     </main>
   );

@@ -1,25 +1,21 @@
+@font-face {
+    font-family: Mustasurma;
+    src: url("../assets/Mustasurma.ttf");
+}
 .myProjects {
     display: grid;
-    grid-template-rows: 10% calc(100% - 10%);
+    grid-template-rows: 20% 80%;
     height: 100%;
 }
 
 
 .myProjects > header {
-    margin-left: 10%;
-    font-size: 3.5vh;
-    font-family: "Arsenal", sans-serif;
-    font-weight: bolder;
-    background-color: white;
-    width: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    
-    padding: 2px 15px;
-    transform: skewX(-15deg) rotate(0.2deg);
-    border: solid black 5px;
+    text-align: center;
+    font-family: Mustasurma;
+    font-size: min(11vw, 11vh);
+    color: white;
+    margin-top: 4vh;
+    text-shadow: 7px 7px black;
 }
 
 .projectCardWrapper {
@@ -28,7 +24,7 @@
 
 .projectCard {
     font-family: "Arsenal", sans-serif;
-    margin-top: 3%;
+    margin-top: max(3%, 15px);
     margin-left: 10%;
     list-style-type: none;
     color: white;
@@ -124,7 +120,7 @@
     grid-area: description;
 }
 
-.projectCard > h1, img {
+.projectCard > h1, .projectCard > img {
     margin-bottom: 3%;    
 }
 

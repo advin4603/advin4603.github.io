@@ -1,0 +1,51 @@
+@font-face {
+    font-family: EarwigFactory;
+    src: url("../assets/earwigfactoryrg.otf");
+}
+
+.workExperience {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    place-items: center;
+}
+
+.workExperience > h1 {
+    font-family: EarwigFactory;
+    font-weight: 100;
+    font-size: min(10vw, 10vh);
+    color: white;
+    text-shadow: 7px 7px black;
+}
+
+.experiences {
+    list-style-type: none;
+}
+
+.experiences > li {
+    background-color: black;
+    margin: max(2%, 20px);
+    border: solid white min(3vw, 10px);
+    outline: black solid min(1vw, 5px);
+    color: white;
+    padding: 2% 5%;
+    font-family: Arsenal;
+}
+
+.experiences > li > h1 {
+    font-size: max(min(4vw, 4vh), 16px);
+}
+
+.experiences > li > h3 {
+    font-size: max(min(3vw, 3vh), 16px);
+}
+
+.experiences > li > h5 {
+    font-size: max(min(2.5vw, 2.5vh), 16px);
+}
+
+.experiences > li > p {
+    font-size: max(min(2vw, 2vh), 16px);
+    margin-top: 1vh;
+}
+

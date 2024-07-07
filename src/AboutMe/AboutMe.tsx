@@ -105,11 +105,9 @@ function AboutMe() {
         </svg> */}
 
         <Scrollbars
-          style={{ height: "40vh" }}
+          style={{ height: "45vh" }}
           className="text-section"
-          renderThumbHorizontal={({ style, ...props }) => (
-            <div style={{ ...style, backgroundColor: "white" }} {...props} />
-          )}
+          renderThumbHorizontal={() => <div style={{ display: "hidden" }} />}
           renderThumbVertical={({ style, ...props }) => (
             <div
               style={{
@@ -126,6 +124,7 @@ function AboutMe() {
                 ...style,
                 paddingRight: 15,
                 paddingLeft: "5%",
+                marginBottom: "20px",
               }}
               {...props}
             />
@@ -135,6 +134,20 @@ function AboutMe() {
           <div>
             I am Ayan Datta, a student at IIIT-Hyderabad pursuing Computational
             Linguistics and an Undergraduate Researcher at LTRC-IIITH.
+          </div>
+          <div className="altText">
+            Here are my interests:
+            <ul>
+              <li>
+                Machine Learning
+                <ul>
+                  <li>Natural Language Processing - Language Models</li>
+                  <li>Mechanistic Interpretability</li>
+                </ul>
+              </li>
+              <li>Web and Application Development</li>
+              <li>Game Development</li>
+            </ul>
           </div>
         </Scrollbars>
       </section>

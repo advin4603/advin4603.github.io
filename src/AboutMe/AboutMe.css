@@ -3,7 +3,19 @@
   font-family: "Arsenal", sans-serif;
   background-color: black;
   color: white;
-  font-size: min(5vw, 5vh);
+  font-size: min(3.5vw, 3.5vh);
+  overflow-x: hidden;
+}
+
+.text-section > .box {
+  overflow-x: hidden !important;
+}
+
+.text-section .altText {
+  margin-top: 10px;
+}
+.text-section .altText > ul > li >ul {
+  margin-left: 25px;
 }
 
 @keyframes entry-top-left {
